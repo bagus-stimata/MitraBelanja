@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <color name="colorPrimary">#6200EE</color>-->
+<!--    <color name="colorPrimaryDark">#3700B3</color>-->
+<!--    <color name="colorAccent">#03DAC5</color>-->
+
+
+
+    <color name="colorPrimary">#71f583</color>
+    <color name="colorPrimaryDark">#39bf4c</color>
+    <color name="colorPrimaryLight">#9effab</color>
+    <color name="colorAccent">#65cf73</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="colorError1">#F44336</color>
+    <color name="colorError2">#fc9e97</color>
+
+    <color name="colorWarning1">#fcf403</color>
+    <color name="colorWarning2">#f7f6ad</color>
+
+    <color name="colorNeutral1">#434343</color>
+    <color name="colorNeutral2">#858585</color>
+
+    <color name="colorError">#CC0000</color>
+    <color name="colorSuccess">#4BB543</color>
+
+
+
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#727272</color>
+
+    <color name="text">#FFFFFF</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+
+    <color name="colorControlNormal">@color/textColorSecondary</color>
+    <color name="colorControlActivated">@color/colorAccent</color>
+    <color name="colorControlHighlight">@color/divider</color>
+
+    <color name="colorButtonNormal">#19C1B2</color>
+    <color name="colorSwitchThumbNormal">#19C1B2</color>
+    <color name="navigationBarColor">@color/colorPrimaryDark</color>
+
+    <color name="windowBackground">#DDDDDD</color>
+    <color name="lightBackground">#E0E0E0</color>
+    <color name="darkBackground">#424242</color>
+    <color name="drawerBackground">#FFfafafa</color>
+    <color name="rowBackground">#F2F2F2</color>
+
+    <color name="colorRed">#ffff0000</color>
+    <color name="colorGreen">#ff00cc00</color>
+    <color name="colorBlue">#3F51B5</color>
+
+    <integer-array name="button_colors">
+        <item>@color/colorPrimaryLight</item>
+        <item>@color/colorAccent</item>
+        <item>@color/colorPrimary</item>
+    </integer-array>
+
+    <array name="button_icons">
+        <item>@drawable/ic_favorite</item>
+        <item>@drawable/ic_store</item>
+        <item>@drawable/ic_inbox</item>
+    </array>
+
+
+
+<!--    From Ecommerce Android Example-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="border">#f1f5f7</color>
+    <color name="stroke">#e0e3e4</color>
+    <color name="circle_border">#FFBDBDBD</color>
+    <color name="sort_bar_background">#333333</color>
+    <color name="sort_bar_divider">#5c5c5c</color>
+    <color name="yellow">#fccb03</color>
+    <color name="transparent">#00000000</color>
+
+</resources>
