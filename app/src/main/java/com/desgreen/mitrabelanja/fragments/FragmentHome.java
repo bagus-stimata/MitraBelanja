@@ -57,6 +57,7 @@ import butterknife.BindView;
 
 public class FragmentHome extends Fragment {
 
+
     ApiAuthenticationClient apiAuthenticationClient;
     MainViewModel mainViewModel;
     FUser userActive = new FUser();
@@ -105,6 +106,7 @@ public class FragmentHome extends Fragment {
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
         userActive = mainViewModel.getfUserServiceRest().getFUserByUsername("bagus");
 
+        System.out.println("Oke beres semua");
     }
 
     @Nullable
