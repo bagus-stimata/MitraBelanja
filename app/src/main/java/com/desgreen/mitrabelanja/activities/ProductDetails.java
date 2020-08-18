@@ -22,7 +22,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.desgreen.mitrabelanja.R;
 import com.erp.distribution.sfa.model.FMaterial;
-import com.erp.distribution.sfa.security_model.FUser;
 //import com.google.android.material.internal.FlowLayout;
 
 import org.apmem.tools.layouts.FlowLayout;
@@ -83,7 +82,7 @@ public class ProductDetails extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.product_detail);
+        setContentView(R.layout.product_detail_shop);
 
         ButterKnife.bind(this);
 
