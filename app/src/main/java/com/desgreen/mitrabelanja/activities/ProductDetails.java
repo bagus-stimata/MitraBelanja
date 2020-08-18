@@ -43,6 +43,8 @@ public class ProductDetails extends AppCompatActivity {
     FMaterial product;
 //    DB_Handler db_handler;
 
+    //Test Git IntelijIDea
+
     String selectedSize = null;
     String selectedColor = null;
     String selectedItemPrice = null;
