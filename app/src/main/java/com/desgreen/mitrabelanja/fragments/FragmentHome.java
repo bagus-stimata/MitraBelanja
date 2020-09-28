@@ -37,6 +37,7 @@ import com.desgreen.mitrabelanja.adapter.SliderImageAdapter;
 import com.desgreen.mitrabelanja.util.Constants;
 import com.erp.distribution.sfa.model.CategoryModel;
 import com.erp.distribution.sfa.model.FMaterial;
+import com.erp.distribution.sfa.model.FMaterialGroup1;
 import com.erp.distribution.sfa.model.FMaterialGroup3;
 import com.erp.distribution.sfa.security_config.ApiAuthenticationClient;
 import com.erp.distribution.sfa.security_model.FUser;
@@ -198,8 +199,14 @@ public class FragmentHome extends Fragment {
             List<CategoryModel> pdata = new ArrayList<CategoryModel>();
 
             int counter = 0;
-            for (FMaterialGroup3 fMaterialGroup3: mainViewModel.getfMaterialGroup3ServiceRest().getAllFMaterialGroup3()) {
-                CategoryModel categoryModel1 = new CategoryModel(fMaterialGroup3.getId(), 1, fMaterialGroup3.getDescription(),"img1",false);
+//            for (FMaterialGroup3 fMaterialGroup3: mainViewModel.getfMaterialGroup3ServiceRest().getAllFMaterialGroup3()) {
+//                CategoryModel categoryModel1 = new CategoryModel(fMaterialGroup3.getId(), 1, fMaterialGroup3.getDescription(),"img1",false);
+//                pdata.add(categoryModel1);
+//                counter++;
+//                if (counter >7) break;
+//            }
+            for (FMaterialGroup1 fMaterialGroup1: mainViewModel.getfMaterialGroup1ServiceRest().getAllFMaterialGroup1() ) {
+                CategoryModel categoryModel1 = new CategoryModel(fMaterialGroup1.getId(), 1, fMaterialGroup1.getDescription(),"img1",false);
                 pdata.add(categoryModel1);
                 counter++;
                 if (counter >7) break;

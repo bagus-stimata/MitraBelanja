@@ -10,6 +10,8 @@ import androidx.lifecycle.MutableLiveData;
 import com.erp.distribution.sfa.model.FMaterialGroup3;
 import com.erp.distribution.sfa.security_model.FUser;
 import com.erp.distribution.sfa.security_repository.FUserServiceRest;
+import com.erp.distribution.sfa.service_rest.FMaterialGroup1ServiceRest;
+import com.erp.distribution.sfa.service_rest.FMaterialGroup2ServiceRest;
 import com.erp.distribution.sfa.service_rest.FMaterialGroup3ServiceRest;
 import com.erp.distribution.sfa.service_rest.FMaterialServiceRest;
 
@@ -20,6 +22,8 @@ public class MainViewModel extends AndroidViewModel {
 
     FUserServiceRest fUserServiceRest;
     FMaterialServiceRest fMaterialServiceRest;
+    FMaterialGroup1ServiceRest fMaterialGroup1ServiceRest;
+    FMaterialGroup2ServiceRest fMaterialGroup2ServiceRest;
     FMaterialGroup3ServiceRest fMaterialGroup3ServiceRest;
 
     //    private FUserRepository repository;
@@ -37,6 +41,8 @@ public class MainViewModel extends AndroidViewModel {
 
         fUserServiceRest = new FUserServiceRest(application.getApplicationContext());
         fMaterialServiceRest = new FMaterialServiceRest(application.getApplicationContext());
+        fMaterialGroup1ServiceRest = new FMaterialGroup1ServiceRest(application.getApplicationContext());
+        fMaterialGroup2ServiceRest = new FMaterialGroup2ServiceRest(application.getApplicationContext());
         fMaterialGroup3ServiceRest = new FMaterialGroup3ServiceRest(application.getApplicationContext());
 
     }
@@ -79,5 +85,13 @@ public class MainViewModel extends AndroidViewModel {
 
     public FMaterialGroup3ServiceRest getfMaterialGroup3ServiceRest() {
         return fMaterialGroup3ServiceRest;
+    }
+
+    public FMaterialGroup1ServiceRest getfMaterialGroup1ServiceRest() {
+        return fMaterialGroup1ServiceRest;
+    }
+
+    public FMaterialGroup2ServiceRest getfMaterialGroup2ServiceRest() {
+        return fMaterialGroup2ServiceRest;
     }
 }
