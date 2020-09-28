@@ -58,7 +58,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.Holdr> {
 //        }
 
 //        holdr.store.setText(domain.getFdivisionBean());
-        holdr.store.setText("MB-" + domain.getId());
+//        holdr.store.setText("MB-" + domain.getId() );
+        holdr.store.setText("MB-" + domain.getPcode() );
         holdr.price.setText(_priceFormat("" + domain.getSprice2AfterPpn()));
 //        holdr.priceold.setText(_priceFormat("" + domain.getSprice2AfterPpn()));
         holdr.priceold.setText("");
