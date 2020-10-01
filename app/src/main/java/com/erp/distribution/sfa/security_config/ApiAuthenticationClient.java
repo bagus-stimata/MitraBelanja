@@ -14,8 +14,8 @@ public class ApiAuthenticationClient {
     private HttpHeaders requestHeaders;
 
     private String baseUrl = "http://ssp-surabaya.ddns.net:8989/rest/";
-    private String username = "";
-    private String password = "";
+    private String username = "user01";
+    private String password = "Welcome1";
 
     //Current User
     private FUser userActive = new FUser();

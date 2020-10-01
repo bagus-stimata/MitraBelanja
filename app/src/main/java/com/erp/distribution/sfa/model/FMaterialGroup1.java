@@ -26,7 +26,9 @@ public class FMaterialGroup1 {
 	
 	private String description ="";
 
-//	@ManyToOne
+	private String imageName = "";
+
+	//	@ManyToOne
 //	@JoinColumn(name="fdivisionBean", referencedColumnName="ID")
 //	private FDivision fdivisionBean;
 	private Integer fdivisionBean = 0;
@@ -118,5 +120,20 @@ public class FMaterialGroup1 {
 
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
+	}
+
+	/**
+	 * Biar ditoleransi null juga boleh
+	 */
+	public String getImageName() {
+		if (imageName==null) {
+			return "";
+		}else {
+			return imageName;
+		}
+	}
+
+	public void setImageName(String imageName) {
+		this.imageName = imageName;
 	}
 }

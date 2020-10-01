@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-@Entity(tableName="fUser")
+@Entity(tableName="tb_user")
 public class FUser implements Serializable {
 
 	@PrimaryKey(autoGenerate = true)

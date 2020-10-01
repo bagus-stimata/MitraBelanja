@@ -38,6 +38,11 @@ public class FMaterial implements Serializable{
 	private String barcode="";
 	private String pname="";
 
+//	@Lob
+//	@Type(type = "text")
+//	@Column(name="DESCRIPTION")
+	private String description="";
+
 	@Ignore
 	@JsonIgnore
 	private String oldKode1="";
@@ -1056,6 +1061,13 @@ public class FMaterial implements Serializable{
 		this.selected = selected;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	@Override
 	public boolean equals(Object o) {
