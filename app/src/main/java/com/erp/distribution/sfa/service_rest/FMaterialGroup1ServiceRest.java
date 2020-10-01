@@ -221,7 +221,6 @@ public class FMaterialGroup1ServiceRest {
         }
         @Override
         protected List<FMaterialGroup1> doInBackground(Void... voids) {
-//            final String url = apiAuthenticationClient.getBaseUrl() + "getAllFMaterialGroup1";
             String url = apiAuthenticationClient.getBaseUrl();
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());

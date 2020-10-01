@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
         searchBarRelativeLayout.setVisibility(View.VISIBLE);
 
+        System.out.println("Hello bos");
 
         // initialize bottom navigation view
 //        navigation = findViewById(R.id.navigation);
@@ -103,16 +104,12 @@ public class MainActivity extends AppCompatActivity {
 
         apiAuthenticationClient.setBaseUrl("http://ssp-surabaya.ddns.net:8989/rest/");
 //        apiAuthenticationClient.setBaseUrl("http://192.168.1.100:8989/rest/");
-        apiAuthenticationClient.setUsername("bagus");
-        apiAuthenticationClient.setPassword("hacker");
+        apiAuthenticationClient.setUsername("des.jatim1@gmail.com");
+        apiAuthenticationClient.setPassword("Welcome1");
 
-        userActive = mainViewModel.fUserServiceRest.getFUserByUsername("bagus");
+        userActive = mainViewModel.fUserServiceRest.getFUserByUsername("des.jatim1@gmail.com");
 
         callHomeFragment();
-
-
-
-
 
 
 

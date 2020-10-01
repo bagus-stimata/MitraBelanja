@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.erp.distribution.sfa.model.FMaterial;
 import com.erp.distribution.sfa.security_config.ApiAuthenticationClient;
 import com.erp.distribution.sfa.security_model.FUser;
 
@@ -58,11 +59,8 @@ public class FUserServiceRest {
         FUserServiceRest.FUserCrudAsyncTask asyncTask = (FUserServiceRest.FUserCrudAsyncTask) new FUserServiceRest.FUserCrudAsyncTask(apiAuthenticationClient, id, true);
         FUser fUser = null;
         try {
-//            fUser = asyncTask.execute().get();
-            fUser = asyncTask.execute().get(5, TimeUnit.SECONDS);
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException | TimeoutException e) {
+            fUser = asyncTask.execute().get();
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
         if (fUser==null) fUser =new FUser();
@@ -73,26 +71,23 @@ public class FUserServiceRest {
         FUserWithUsernameAsyncTask asyncTask = (FUserWithUsernameAsyncTask) new FUserWithUsernameAsyncTask(apiAuthenticationClient, username);
         FUser fUser = null;
         try {
-            fUser = asyncTask.execute().get(5, TimeUnit.SECONDS);
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException | TimeoutException e) {
+            fUser = asyncTask.execute().get();
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
 
-//        if (fUser==null) fUser =new FUser();
+        if (fUser==null) fUser =new FUser();
         return fUser;
     }
     public FUser getFUserByEmail(String email) {
         FUserServiceRest.FUserWithEmailAsyncTask asyncTask = (FUserServiceRest.FUserWithEmailAsyncTask) new FUserServiceRest.FUserWithEmailAsyncTask(apiAuthenticationClient, email);
         FUser fUser = null;
         try {
-            fUser = asyncTask.execute().get(5, TimeUnit.SECONDS);
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException | TimeoutException e) {
+            fUser = asyncTask.execute().get();
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
+
         if (fUser==null) fUser =new FUser();
         return fUser;
     }
@@ -103,10 +98,8 @@ public class FUserServiceRest {
         List<FUser> listFUser = new ArrayList<>();
         try {
 //            fUser = asyncTask.execute().get();
-            listFUser = asyncTask.execute().get(5, TimeUnit.SECONDS);
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException | TimeoutException e) {
+            listFUser = asyncTask.execute().get();
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
 //        if (fUser==null) fUser =new FUser();
@@ -243,6 +236,8 @@ public class FUserServiceRest {
                 Log.d(TAG, url);
                 ResponseEntity<FUser[]> response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<Object>(apiAuthenticationClient.getRequestHeaders()), FUser[].class);
                 List<FUser> list = Arrays.asList(response.getBody());
+
+                Log.d("Result", response.getBody().toString());
                 return list;
 
             } catch (HttpClientErrorException e) {
@@ -267,9 +262,9 @@ public class FUserServiceRest {
 
     public class FUserWithUsernameAsyncTask extends AsyncTask<Void, Void, FUser> {
 
+        private ApiAuthenticationClient apiAuthenticationClient;
         FUser newFUser = null;
         String username = "";
-        private ApiAuthenticationClient apiAuthenticationClient;
 
         private FUserWithUsernameAsyncTask(ApiAuthenticationClient apiAuthenticationClient, String username) {
             this.apiAuthenticationClient = apiAuthenticationClient;
@@ -314,10 +309,10 @@ public class FUserServiceRest {
     }
 
     public class FUserWithEmailAsyncTask extends AsyncTask<Void, Void, FUser> {
+        private ApiAuthenticationClient apiAuthenticationClient;
 
         FUser newFUser = null;
         String email = "";
-        private ApiAuthenticationClient apiAuthenticationClient;
 
         private FUserWithEmailAsyncTask(ApiAuthenticationClient apiAuthenticationClient, String email) {
             this.apiAuthenticationClient = apiAuthenticationClient;

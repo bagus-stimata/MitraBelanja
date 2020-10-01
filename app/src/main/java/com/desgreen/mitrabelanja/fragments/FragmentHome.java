@@ -101,12 +101,12 @@ public class FragmentHome extends Fragment {
 
         apiAuthenticationClient.setBaseUrl("http://ssp-surabaya.ddns.net:8989/rest/");
 //        apiAuthenticationClient.setBaseUrl("http://192.168.1.100:8989/rest/");
-        apiAuthenticationClient.setUsername("user01");
+        apiAuthenticationClient.setUsername("des.jatim1@gmail.com");
         apiAuthenticationClient.setPassword("Welcome1");
 
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
-//        System.out.println(mainViewModel.getfUserServiceRest().getAllFUser());
+        System.out.println(mainViewModel.getfUserServiceRest().getAllFUser() );
 //        userActive = mainViewModel.getfUserServiceRest().getFUserByUsername(apiAuthenticationClient.getUsername());
 //        System.out.println(apiAuthenticationClient.getUsername() + " >>>>> " + userActive.getUsername());
 
@@ -166,9 +166,6 @@ public class FragmentHome extends Fragment {
             }
         });
 
-        userActive = mainViewModel.getfUserServiceRest().getFUserByUsername(apiAuthenticationClient.getUsername());
-        System.out.println(mainViewModel.getfUserServiceRest().getAllFUser());
-        System.out.println(apiAuthenticationClient.getUsername() + " >>>>> " + userActive.getUsername());
 
         loadCategs(main_content_content, "");
         loadFlashSales(main_content_content, "Flash Sales", 0, 25);
@@ -294,9 +291,9 @@ public class FragmentHome extends Fragment {
             tv.setText(title);
             List<FMaterial> pdata = new ArrayList<FMaterial>();
 
-            for (FMaterial p: mainViewModel.getfMaterialServiceRest().getAllFMaterialByDivision(userActive.getFdivisionBean(), 0, 4) ) {
-//            for (FMaterial p: mainViewModel.getfMaterialServiceRest().getAllFMaterial()) {
-                System.out.println("Oke ada: " + p.getPname());
+//            for (FMaterial p: mainViewModel.getfMaterialServiceRest().getAllFMaterialByDivision(userActive.getFdivisionBean(), 0, 4) ) {
+            for (FMaterial p: mainViewModel.getfMaterialServiceRest().getAllFMaterial()) {
+                Log.d("Nama: ", p.getPname());
                 pdata.add(p);
             }
 
