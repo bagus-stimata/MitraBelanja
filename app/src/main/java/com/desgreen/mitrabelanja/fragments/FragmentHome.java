@@ -101,14 +101,12 @@ public class FragmentHome extends Fragment {
 
         apiAuthenticationClient.setBaseUrl("http://ssp-surabaya.ddns.net:8989/rest/");
 //        apiAuthenticationClient.setBaseUrl("http://192.168.1.100:8989/rest/");
-        apiAuthenticationClient.setUsername("des.jatim1@gmail.com");
+        apiAuthenticationClient.setUsername("user01");
         apiAuthenticationClient.setPassword("Welcome1");
 
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
-        System.out.println(mainViewModel.getfUserServiceRest().getAllFUser() );
-//        userActive = mainViewModel.getfUserServiceRest().getFUserByUsername(apiAuthenticationClient.getUsername());
-//        System.out.println(apiAuthenticationClient.getUsername() + " >>>>> " + userActive.getUsername());
+        userActive = mainViewModel.getfUserServiceRest().getFUserByUsername(apiAuthenticationClient.getUsername());
 
     }
 
@@ -207,7 +205,8 @@ public class FragmentHome extends Fragment {
 //                counter++;
 //                if (counter >7) break;
 //            }
-            for (FMaterialGroup1 fMaterialGroup1: mainViewModel.getfMaterialGroup1ServiceRest().getAllFMaterialGroup1() ) {
+//            for (FMaterialGroup1 fMaterialGroup1: mainViewModel.getfMaterialGroup1ServiceRest().getAllFMaterialGroup1() ) {
+            for (FMaterialGroup1 fMaterialGroup1: mainViewModel.getfMaterialGroup1ServiceRest().getAllFMaterialGroup1ByDivision(userActive.getFdivisionBean()) ) {
                 CategoryModel categoryModel1 = new CategoryModel(fMaterialGroup1.getId(), 1, fMaterialGroup1.getDescription(),"img1",false);
                 if (! fMaterialGroup1.getDescription().toUpperCase().contains("OTH") && fMaterialGroup1.isStatusActive()) {
                     pdata.add(categoryModel1);
@@ -291,8 +290,8 @@ public class FragmentHome extends Fragment {
             tv.setText(title);
             List<FMaterial> pdata = new ArrayList<FMaterial>();
 
-//            for (FMaterial p: mainViewModel.getfMaterialServiceRest().getAllFMaterialByDivision(userActive.getFdivisionBean(), 0, 4) ) {
-            for (FMaterial p: mainViewModel.getfMaterialServiceRest().getAllFMaterial()) {
+            for (FMaterial p: mainViewModel.getfMaterialServiceRest().getAllFMaterialByDivision(userActive.getFdivisionBean(), 0, 4) ) {
+//            for (FMaterial p: mainViewModel.getfMaterialServiceRest().getAllFMaterial()) {
                 Log.d("Nama: ", p.getPname());
                 pdata.add(p);
             }

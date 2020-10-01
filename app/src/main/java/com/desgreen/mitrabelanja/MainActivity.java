@@ -104,10 +104,10 @@ public class MainActivity extends AppCompatActivity {
 
         apiAuthenticationClient.setBaseUrl("http://ssp-surabaya.ddns.net:8989/rest/");
 //        apiAuthenticationClient.setBaseUrl("http://192.168.1.100:8989/rest/");
-        apiAuthenticationClient.setUsername("des.jatim1@gmail.com");
+        apiAuthenticationClient.setUsername("user01");
         apiAuthenticationClient.setPassword("Welcome1");
 
-        userActive = mainViewModel.fUserServiceRest.getFUserByUsername("des.jatim1@gmail.com");
+        userActive = mainViewModel.fUserServiceRest.getFUserByUsername("user01");
 
         callHomeFragment();
 
